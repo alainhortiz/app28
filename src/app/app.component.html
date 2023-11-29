@@ -45,3 +45,14 @@
   </ul>
 </section>
 
+<section>
+  <h1>{{ title5 }}</h1>
+  <ul *ngFor=" let city of cities">
+      <li (click)="onCityClicked(city)" [ngClass]="{'selected':city === selection}">{{city}}</li>
+  </ul>
+  <div *ngIf="selection">
+    <p>Your city is: {{selection}}</p>
+    <button (click)="onClear()">Clear your selection</button>
+  </div>
+</section>
+

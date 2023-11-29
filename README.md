@@ -11,3 +11,5 @@
 -Directivas de Atributos. ngClass. ngStyle
 
 -Ciclo de vida de un componente
+
+-Enlace de eventos
