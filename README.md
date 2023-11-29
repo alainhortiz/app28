@@ -9,3 +9,5 @@
 -Directivas Estructurales. ngIf. ngFor
 
 -Directivas de Atributos. ngClass. ngStyle
+
+-Ciclo de vida de un componente
