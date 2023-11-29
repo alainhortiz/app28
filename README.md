@@ -13,3 +13,5 @@
 -Ciclo de vida de un componente
 
 -Enlace de eventos
+
+-Decorador @Input 

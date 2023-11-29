@@ -56,3 +56,17 @@
   </div>
 </section>
 
+<section>
+  <h1>{{ title6 }}</h1>
+  <ul *ngFor=" let city of cities">
+      <li (click)="onCityClicked(city)" [ngClass]="{'selected':city === selection}">{{city}}</li>
+  </ul>
+  <div *ngIf="selection">
+    <p>Your city is: {{selection}}</p>
+    <app-button (click)="onClear()" [color]="'blue'" [label]="'Clear your selection'" [selection]="selection"></app-button>
+    <app-button (click)="onClear()" [color]="'green'" [label]="'Clear your ...'"></app-button>
+    <app-button (click)="onClear()" [color]="'red'" [label]="'Clear your '"></app-button>
+    <app-button (click)="onClear()" [color]="'yellow'" [label]="'Clear'"></app-button>
+  </div>
+</section>
+
