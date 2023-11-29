@@ -1,0 +1,19 @@
+h1{
+    color: blue($color: #1a0456);
+}
+
+.selected{
+    background-color: red;
+    color: white;
+    padding: 10px;
+}
+
+.unselected{
+    background-color: white;
+    color: black;
+    padding: 10px;
+}
+
+.blue{
+    color: blue;
+}
