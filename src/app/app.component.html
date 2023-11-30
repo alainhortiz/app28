@@ -22,11 +22,11 @@
       <li>Cádiz</li>
       <li>Sevilla</li>
   </ul>
-  <ul *ngFor=" let city of cities">
-      <li>{{city}}</li>
+  <ul>
+      <li *ngFor=" let city of cities">{{city}}</li>
   </ul>
-  <ul *ngFor=" let num of [0,1,2,3,4,5]">
-      <li>{{num}}</li>
+  <ul>
+      <li *ngFor=" let num of [0,1,2,3,4,5]">{{num}}</li>
   </ul>
   <p *ngIf="pais">El nombre del país es {{ pais }}</p>
   <input type="text" [(ngModel)]="pais">
@@ -34,21 +34,21 @@
 
 <section>
   <h1>{{ title4 }}</h1>
-  <ul *ngFor=" let city of cities">
-      <li [ngClass]="['selected', 'blue']">{{city}}</li>
+  <ul>
+      <li *ngFor=" let city of cities" [ngClass]="['selected', 'blue']">{{city}}</li>
   </ul>
-  <ul *ngFor=" let city of cities">
-      <li [ngStyle]="{'color': 'red','background-color': city === 'Madrid' ? 'blue' : 'green'}">{{city}}</li>
+  <ul>
+      <li *ngFor=" let city of cities" [ngStyle]="{'color': 'red','background-color': city === 'Madrid' ? 'blue' : 'green'}">{{city}}</li>
   </ul>
-  <ul *ngFor=" let num of [0,1,2,3,4,5]">
-      <li [ngClass]="{'selected': num === 1, 'blue': num !== 1}">{{num}}</li>
+  <ul>
+      <li *ngFor=" let num of [0,1,2,3,4,5]" [ngClass]="{'selected': num === 1, 'blue': num !== 1}">{{num}}</li>
   </ul>
 </section>
 
 <section>
   <h1>{{ title5 }}</h1>
-  <ul *ngFor=" let city of cities">
-      <li (click)="onCityClicked(city)" [ngClass]="{'selected':city === selection}">{{city}}</li>
+  <ul>
+      <li *ngFor=" let city of cities" (click)="onCityClicked(city)" [ngClass]="{'selected':city === selection}">{{city}}</li>
   </ul>
   <div *ngIf="selection">
     <p>Your city is: {{selection}}</p>
@@ -58,8 +58,8 @@
 
 <section>
   <h1>{{ title6 }}</h1>
-  <ul *ngFor=" let city of cities">
-      <li (click)="onCityClicked(city)" [ngClass]="{'selected':city === selection}">{{city}}</li>
+  <ul>
+      <li *ngFor=" let city of cities" (click)="onCityClicked(city)" [ngClass]="{'selected':city === selection}">{{city}}</li>
   </ul>
   <div *ngIf="selection">
     <p>Your city is: {{selection}}</p>

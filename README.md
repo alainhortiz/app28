@@ -15,3 +15,5 @@
 -Enlace de eventos
 
 -Decorador @Input 
+
+-Decorador @Output 
