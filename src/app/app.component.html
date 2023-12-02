@@ -1,72 +1,164 @@
-<section>
-  <h1>{{ title1 }}</h1>
-  <p>Total: {{ 5 + 5 }}</p>
-  <img width="150" height="150" src="{{ url }}" alt="">
-<router-outlet></router-outlet>
-<app-button />
-</section>
-
-<section>
-  <h1>{{ title2 }}</h1>
-  <p>El nombre es {{ name }}</p>
-  <input type="text" [(ngModel)]="name">
-</section>
-
-<section>
-  <h1>{{ title3 }}</h1>
-  <ul>
-      <li>Barcelona</li>
-      <li>Madrid</li>
-      <li>Malaga</li>
-      <li>Pamplona</li>
-      <li>Cádiz</li>
-      <li>Sevilla</li>
-  </ul>
-  <ul>
-      <li *ngFor=" let city of cities">{{city}}</li>
-  </ul>
-  <ul>
-      <li *ngFor=" let num of [0,1,2,3,4,5]">{{num}}</li>
-  </ul>
-  <p *ngIf="pais">El nombre del país es {{ pais }}</p>
-  <input type="text" [(ngModel)]="pais">
-</section>
-
-<section>
-  <h1>{{ title4 }}</h1>
-  <ul>
-      <li *ngFor=" let city of cities" [ngClass]="['selected', 'blue']">{{city}}</li>
-  </ul>
-  <ul>
-      <li *ngFor=" let city of cities" [ngStyle]="{'color': 'red','background-color': city === 'Madrid' ? 'blue' : 'green'}">{{city}}</li>
-  </ul>
-  <ul>
-      <li *ngFor=" let num of [0,1,2,3,4,5]" [ngClass]="{'selected': num === 1, 'blue': num !== 1}">{{num}}</li>
-  </ul>
-</section>
-
-<section>
-  <h1>{{ title5 }}</h1>
-  <ul>
-      <li *ngFor=" let city of cities" (click)="onCityClicked(city)" [ngClass]="{'selected':city === selection}">{{city}}</li>
-  </ul>
-  <div *ngIf="selection">
-    <p>Your city is: {{selection}}</p>
-    <button (click)="onClear()">Clear your selection</button>
+<div class="container">
+  <div class="row">
+    <div class="col-md-8">
+      <h1>{{ title1 }}</h1>
+      <p>Total: {{ 5 + 5 }}</p>
+      <img width="150" height="150" src="{{ url }}" alt="" />
+    </div>
+    <div class="col-md-4">
+      <router-outlet></router-outlet>
+      <app-button />
+    </div>
   </div>
-</section>
-
-<section>
-  <h1>{{ title6 }}</h1>
-  <ul>
-      <li *ngFor=" let city of cities" (click)="onCityClicked(city)" [ngClass]="{'selected':city === selection}">{{city}}</li>
-  </ul>
-  <div *ngIf="selection">
-    <p>Your city is: {{selection}}</p>
-    <app-button (click)="onClear()" [color]="'blue'" [label]="'Clear your selection'" [selection]="selection"></app-button>
-    <app-button (click)="onClear()" [color]="'green'" [label]="'Clear your ...'"></app-button>
-    <app-button (click)="onClear()" [color]="'red'" [label]="'Clear your '"></app-button>
-    <app-button (click)="onClear()" [color]="'yellow'" [label]="'Clear'"></app-button>
+  <div class="row">
+    <div class="col-md-8">
+      <h1>{{ title2 }}</h1>
+      <p>El nombre es {{ name }}</p>
+    </div>
+    <div class="col-md-4">
+      <input type="text" [(ngModel)]="name" />
+    </div>
   </div>
-</section>
-
+  <div class="row">
+    <div class="col-md-8">
+      <h1>{{ title3 }}</h1>
+      <ul>
+        <li>Barcelona</li>
+        <li>Madrid</li>
+        <li>Malaga</li>
+        <li>Pamplona</li>
+        <li>Cádiz</li>
+        <li>Sevilla</li>
+      </ul>
+      <ul>
+        <li *ngFor="let city of cities">{{ city }}</li>
+      </ul>
+      <ul>
+        <li *ngFor="let num of [0, 1, 2, 3, 4, 5]">{{ num }}</li>
+      </ul>
+    </div>
+    <div class="col-md-4">
+      <p *ngIf="pais">El nombre del país es {{ pais }}</p>
+      <input type="text" [(ngModel)]="pais" />
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-8">
+      <h1>{{ title4 }}</h1>
+      <ul>
+        <li *ngFor="let city of cities" [ngClass]="['selected', 'blue']">
+          {{ city }}
+        </li>
+      </ul>
+      <ul>
+        <li
+          *ngFor="let city of cities"
+          [ngStyle]="{
+            color: 'red',
+            'background-color': city === 'Madrid' ? 'blue' : 'green'
+          }"
+        >
+          {{ city }}
+        </li>
+      </ul>
+    </div>
+    <div class="col-md-4">
+      <ul>
+        <li
+          *ngFor="let num of [0, 1, 2, 3, 4, 5]"
+          [ngClass]="{ selected: num === 1, blue: num !== 1 }"
+        >
+          {{ num }}
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-8">
+      <h1>{{ title5 }}</h1>
+      <ul>
+        <li
+          *ngFor="let city of cities"
+          (click)="onCityClicked(city)"
+          [ngClass]="{ selected: city === selection }"
+        >
+          {{ city }}
+        </li>
+      </ul>
+    </div>
+    <div class="col-md-4">
+      <div *ngIf="selection">
+        <p>Your city is: {{ selection }}</p>
+        <button (click)="onClear()">Clear your selection</button>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-8">
+      <h1>{{ title6 }}</h1>
+      <ul>
+        <li
+          *ngFor="let city of cities"
+          (click)="onCityClicked(city)"
+          [ngClass]="{ 'alert alert-info': city === selection }"
+        >
+          {{ city }}
+        </li>
+      </ul>
+    </div>
+    <div class="col-md-4">
+      <div *ngIf="selection">
+        <p>Your city is: {{ selection }}</p>
+        <app-button
+          (click)="onClear()"
+          [color]="'blue'"
+          [label]="'Clear your selection'"
+          [selection]="selection"
+        ></app-button>
+        <app-button
+          (click)="onClear()"
+          [color]="'green'"
+          [label]="'Clear your ...'"
+        ></app-button>
+        <app-button
+          (click)="onClear()"
+          [color]="'red'"
+          [label]="'Clear your '"
+        ></app-button>
+        <app-button
+          (click)="onClear()"
+          [color]="'yellow'"
+          [label]="'Clear'"
+        ></app-button>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12 my-3">
+      <h1>{{ title7 }}</h1>
+      <app-form-new-item (newItemEvent)="addNewCity($event)"   [label]="'City'" [className]="'btn-info'"></app-form-new-item>
+    </div>
+    <div class="col-md-8">
+      <ul>
+        <li
+          *ngFor="let city of cities"
+          (click)="onCityClicked(city)"
+          [ngClass]="{ 'alert alert-info': city === selection }"
+        >
+          {{ city }}
+        </li>
+      </ul>
+    </div>
+    <div class="col-md-4">
+      <div *ngIf="selection">
+        <p>Your city is: {{ selection }}</p>
+        <app-button
+          (click)="onClear()"
+          [color]="'blue'"
+          [label]="'Clear your selection'"
+          [selection]="selection"
+        ></app-button>
+      </div>
+    </div>
+  </div>
+</div>
