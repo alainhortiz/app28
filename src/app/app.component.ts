@@ -4,6 +4,8 @@ import { RouterOutlet } from '@angular/router';
 import { ButtonComponent } from './componentes/button/button.component';
 import { FormNewItemComponent } from './componentes/form-new-item/form-new-item.component';
 import { FormsModule } from '@angular/forms';
+import { FilterPipe } from './pipes/filter.pipe';
+import { CitiesComponent } from './componentes/cities/cities.component';
 
 @Component({
   selector: 'app-root',
@@ -12,8 +14,10 @@ import { FormsModule } from '@angular/forms';
     CommonModule, 
     RouterOutlet, 
     ButtonComponent, 
+    CitiesComponent,
     FormNewItemComponent,
-    FormsModule],
+    FormsModule,
+    FilterPipe],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
@@ -26,6 +30,7 @@ export class AppComponent {
   //declarar solamente una propiedad. fijenese que no tiene valor
   name!: string;
   pais!: string;
+  criterio!: string;
   selection!: string | null;
   title1: string = 'Ejemplo de interpolación';
   title2: string = 'Ejemplo de datos bidireccional';
@@ -34,6 +39,7 @@ export class AppComponent {
   title5: string = 'Ejemplo de enlace de eventos';
   title6: string = 'Ejemplo de @Input';
   title7: string = 'Ejemplo de @Output';
+  title8: string = 'Ejemplo de Pipe';
   url: string = 'https://img1.g-star.com/product/c_fill,f_auto,h_675,q_80/v1685191895/D20147-D190-C744-M01W/g-star-raw-pantalones-pleated-chino-relaxed-verde.jpg';
 
   addNewCity(city: string): void {

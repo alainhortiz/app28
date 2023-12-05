@@ -2,9 +2,9 @@
 
 -Creación de un componente
 
--La interpolación
+-La interpolación (On way data binding)
 
--Enlace de datos bidireccional. Ejemplo de ngModel
+-Enlace de datos bidireccional (Two-way data binding). Ejemplo de ngModel
 
 -Directivas Estructurales. ngIf. ngFor
 
@@ -12,8 +12,12 @@
 
 -Ciclo de vida de un componente
 
--Enlace de eventos
+-Enlace de eventos (Event binding)
 
 -Decorador @Input 
 
 -Decorador @Output 
+
+-Mecanismo de detección de cambio (Change Detection)
+
+-Pipe 
