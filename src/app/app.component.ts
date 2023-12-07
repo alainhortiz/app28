@@ -6,6 +6,7 @@ import { FormNewItemComponent } from './componentes/form-new-item/form-new-item.
 import { FormsModule } from '@angular/forms';
 import { FilterPipe } from './pipes/filter.pipe';
 import { CitiesComponent } from './componentes/cities/cities.component';
+import { ContacComponent } from './componentes/contac/contac.component';
 
 @Component({
   selector: 'app-root',
@@ -15,6 +16,7 @@ import { CitiesComponent } from './componentes/cities/cities.component';
     RouterOutlet, 
     ButtonComponent, 
     CitiesComponent,
+    ContacComponent,
     FormNewItemComponent,
     FormsModule,
     FilterPipe],
